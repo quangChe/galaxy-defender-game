@@ -11,7 +11,10 @@ public class Player : MonoBehaviour
     [SerializeField] float yPaddingTopPercentage = 0.3f;
     [SerializeField] float yPaddingBottom = 0.5f;
     [SerializeField] GameObject missilePrefab;
-    [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] float projectileSpeed = 12f;
+    [SerializeField] float projectileFiringPeriod = 0.1f;
+
+    Coroutine firingCoroutine;
 
     float xMin;
     float xMax;
@@ -31,12 +34,30 @@ public class Player : MonoBehaviour
         Fire();
     }
 
+
     private void Fire()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject missile = Instantiate(missilePrefab, transform.position, Quaternion.identity) as GameObject;
+            firingCoroutine = StartCoroutine(FireContinuously());
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            
+            StopCoroutine(firingCoroutine);
+        }
+    }
+
+    IEnumerator FireContinuously()
+    {
+        while (true)
+        {
+            GameObject missile = Instantiate(
+                missilePrefab,
+                transform.position,
+                Quaternion.identity) as GameObject;
             missile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
 
