@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{E8D687FC-6408-FAC7-D4E2-86CD5CA11A83}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyPath.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WaveConfig.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="21" Column="16" />
+      <File FileName="Assets/Scripts/Player.cs" Line="81" Column="73" />
       <File FileName="Assets/Scripts/Shredder.cs" Line="9" Column="39" />
-      <File FileName="Assets/Scripts/EnemyPath.cs" Line="14" Column="18" />
+      <File FileName="Assets/Scripts/EnemyPath.cs" Line="7" Column="47" />
+      <File FileName="Assets/Scripts/WaveConfig.cs" Line="5" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +12,7 @@
           <Node name="Galaxy Defender" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="EnemyPath.cs" selected="True" />
+                <Node name="WaveConfig.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -21,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9d2eebe4-735d-4bf1-b592-689fd458f18d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5170baf9-852f-4980-a519-ba3991dfc1c4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\EnemyPath.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Shredder.cs" />
+    <Compile Include="Assets\Scripts\WaveConfig.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/q/Desktop/Projects/Unity/Repos/Unity2D/Galaxy Defender/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -78,6 +78,6 @@ public class Player : MonoBehaviour
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + xPadding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - xPadding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + yPaddingBottom;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y * yPaddingTopPercentage;
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - yPaddingTopPercentage;
     }
 }
