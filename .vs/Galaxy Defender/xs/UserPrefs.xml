@@ -3,9 +3,9 @@
     <Files>
       <File FileName="Assets/Scripts/Player.cs" Line="81" Column="73" />
       <File FileName="Assets/Scripts/Shredder.cs" Line="9" Column="39" />
-      <File FileName="Assets/Scripts/EnemyPath.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/WaveConfig.cs" Line="17" Column="40" />
-      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="7" Column="28" />
+      <File FileName="Assets/Scripts/EnemyPath.cs" Line="27" Column="38" />
+      <File FileName="Assets/Scripts/WaveConfig.cs" Line="13" Column="41" />
+      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="19" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
