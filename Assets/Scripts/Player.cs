@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] float yPaddingBottom = 0.5f;
     [SerializeField] GameObject missilePrefab;
     [SerializeField] float projectileSpeed = 12f;
-    [SerializeField] float projectileFiringPeriod = 0.1f;
+    [SerializeField] float projectileFiringPeriod = 0.3f;
 
     Coroutine firingCoroutine;
 

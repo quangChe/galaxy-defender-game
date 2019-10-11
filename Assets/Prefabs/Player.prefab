@@ -97,3 +97,7 @@ MonoBehaviour:
   xPadding: 0.6
   yPaddingTopPercentage: 0.05
   yPaddingBottom: 0.5
+  missilePrefab: {fileID: 6644285880841414270, guid: 0a9a561e3e77e427b9cccdbf598f3d7d,
+    type: 3}
+  projectileSpeed: 5
+  projectileFiringPeriod: 10

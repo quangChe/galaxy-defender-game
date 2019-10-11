@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6526774477098591320}
   - component: {fileID: 6526774477098591321}
   - component: {fileID: 1005070186108862860}
+  - component: {fileID: -3207959184056779794}
+  - component: {fileID: -1675986072445420023}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -93,5 +95,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8338c6278cb4442782967b85fce99db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: 8e42da440d2244073adbc9a915f9f2c0, type: 2}
-  moveSpeed: 5
+--- !u!114 &-3207959184056779794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526774477098591318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec669c01b88740168170ce79519fcb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  missilePrefab: {fileID: 3378498873425451819, guid: aa26337a4b6344fdabc343506d1c8183,
+    type: 3}
+  shotCounter: 0
+  minTimebetweenShots: 0.2
+  maxTimeBetweenShots: 3
+--- !u!58 &-1675986072445420023
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526774477098591318}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.465
