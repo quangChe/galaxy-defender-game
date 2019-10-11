@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Configuration parameters
+    [SerializeField] float health = 100;
     [SerializeField] float MoveSpeed = 10f;
     [SerializeField] float xPadding = 0.6f;
     [SerializeField] float yPaddingTopPercentage = 0.3f;
@@ -79,5 +80,22 @@ public class Player : MonoBehaviour
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - xPadding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + yPaddingBottom;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - yPaddingTopPercentage;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        if (damageDealer) { ProcessHit(damageDealer); }
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0;
+        }
     }
 }

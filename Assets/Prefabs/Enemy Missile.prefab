@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8997438849935386222}
   - component: {fileID: 8018566260138481329}
   - component: {fileID: 7724394357136432417}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,4 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e274bcf8c00904a189a2afa48cfea127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 100
