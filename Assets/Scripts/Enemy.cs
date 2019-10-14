@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,12 +11,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] float shotCounter;
     [SerializeField] float minTimebetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
-    
+    [SerializeField] GameObject explosionParticles;
+    [SerializeField] float explosionDuration = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        shotCounter = Random.Range(minTimebetweenShots, maxTimeBetweenShots);
+        shotCounter = UnityEngine.Random.Range(minTimebetweenShots, maxTimeBetweenShots);
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class Enemy : MonoBehaviour
         if (shotCounter <= 0f)
         {
             Fire();
-            shotCounter = Random.Range(minTimebetweenShots, maxTimeBetweenShots);
+            shotCounter = UnityEngine.Random.Range(minTimebetweenShots, maxTimeBetweenShots);
         }
     }
 
@@ -55,7 +57,14 @@ public class Enemy : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Explode();
         }
+    }
+
+    private void Explode()
+    {
+        Destroy(gameObject);
+        GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation) as GameObject;
+        Destroy(explosion, explosionDuration);
     }
 }

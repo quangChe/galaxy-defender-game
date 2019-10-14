@@ -114,6 +114,9 @@ MonoBehaviour:
   shotCounter: 0
   minTimebetweenShots: 0.2
   maxTimeBetweenShots: 3
+  explosionParticles: {fileID: 7423827302354857369, guid: e242d9137c7654ec6bfea41e1c10c8af,
+    type: 3}
+  explosionDuration: 1
 --- !u!58 &-1675986072445420023
 CircleCollider2D:
   m_ObjectHideFlags: 0
