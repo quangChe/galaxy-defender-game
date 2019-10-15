@@ -108,15 +108,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  shotCounter: 0
+  explosionDuration: 1
+  explosionParticles: {fileID: 7423827302354857369, guid: e242d9137c7654ec6bfea41e1c10c8af,
+    type: 3}
   missilePrefab: {fileID: 3378498873425451819, guid: aa26337a4b6344fdabc343506d1c8183,
     type: 3}
   projectileSpeed: 8
-  shotCounter: 0
   minTimebetweenShots: 0.2
   maxTimeBetweenShots: 3
-  explosionParticles: {fileID: 7423827302354857369, guid: e242d9137c7654ec6bfea41e1c10c8af,
-    type: 3}
-  explosionDuration: 1
+  deathAudio: {fileID: 8300000, guid: c821e2a11b7df43ae9a743aeb0699052, type: 3}
+  deathAudioVolume: 0.7
+  shootingAudio: {fileID: 8300000, guid: 8432f6b501f174fb988e4755eb194adc, type: 3}
+  shootingAudioVolume: 0.1
 --- !u!58 &-1675986072445420023
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -5,14 +5,23 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Configs")]
     [SerializeField] float health = 100;
+    [SerializeField] float shotCounter;
+    [SerializeField] float explosionDuration = 1f;
+    [SerializeField] GameObject explosionParticles;
+
+    [Header("Projectile")]
     [SerializeField] GameObject missilePrefab;
     [SerializeField] float projectileSpeed = 8f;
-    [SerializeField] float shotCounter;
     [SerializeField] float minTimebetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
-    [SerializeField] GameObject explosionParticles;
-    [SerializeField] float explosionDuration = 1f;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip deathAudio;
+    [SerializeField] [Range (0, 1)] float deathAudioVolume = 0.7f;
+    [SerializeField] AudioClip shootingAudio;
+    [SerializeField] [Range(0, 1)] float shootingAudioVolume = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +52,7 @@ public class Enemy : MonoBehaviour
             transform.position,
             Quaternion.identity) as GameObject;
         missile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootingAudio, Camera.main.transform.position, shootingAudioVolume);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -66,5 +76,6 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
         GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation) as GameObject;
         Destroy(explosion, explosionDuration);
+        AudioSource.PlayClipAtPoint(deathAudio, Camera.main.transform.position, deathAudioVolume);
     }
 }

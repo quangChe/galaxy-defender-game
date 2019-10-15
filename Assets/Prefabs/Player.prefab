@@ -94,15 +94,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14b3bbc304704528a031e1a5f669ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  MoveSpeed: 10
   xPadding: 0.6
   yPaddingTopPercentage: 0.05
   yPaddingBottom: 0.5
+  health: 100
+  MoveSpeed: 10
   missilePrefab: {fileID: 6644285880841414270, guid: 0a9a561e3e77e427b9cccdbf598f3d7d,
     type: 3}
   projectileSpeed: 10
   projectileFiringPeriod: 0.2
+  shootingAudio: {fileID: 8300000, guid: 12dc0859535ad40c794c04a71a70fd4e, type: 3}
+  shootingAudioVolume: 0.7
+  deathAudio: {fileID: 8300000, guid: c821e2a11b7df43ae9a743aeb0699052, type: 3}
+  deathAudioVolume: 0.8
 --- !u!60 &5026281535877047510
 PolygonCollider2D:
   m_ObjectHideFlags: 0

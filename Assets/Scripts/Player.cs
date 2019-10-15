@@ -6,14 +6,25 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Configuration parameters
-    [SerializeField] float health = 100;
-    [SerializeField] float MoveSpeed = 10f;
+    [Header("Viewport")]
     [SerializeField] float xPadding = 0.6f;
     [SerializeField] float yPaddingTopPercentage = 0.3f;
     [SerializeField] float yPaddingBottom = 0.5f;
+
+    [Header("Space Craft")]
+    [SerializeField] float health = 100;
+    [SerializeField] float MoveSpeed = 10f;
+    
+    [Header("Projectile")]
     [SerializeField] GameObject missilePrefab;
     [SerializeField] float projectileSpeed = 12f;
     [SerializeField] float projectileFiringPeriod = 0.3f;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip shootingAudio;
+    [SerializeField] [Range(0, 1)] float shootingAudioVolume = 0.2f;
+    [SerializeField] AudioClip deathAudio;
+    [SerializeField] [Range(0, 1)] float deathAudioVolume = 0.8f;
 
     Coroutine firingCoroutine;
 
@@ -58,6 +69,7 @@ public class Player : MonoBehaviour
                 transform.position,
                 Quaternion.identity) as GameObject;
             missile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            AudioSource.PlayClipAtPoint(shootingAudio, Camera.main.transform.position, shootingAudioVolume);
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
@@ -94,8 +106,16 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
-            Time.timeScale = 0;
+            Explode();
         }
+    }
+
+    private void Explode()
+    {
+        Destroy(gameObject);
+        //GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation) as GameObject;
+        //Destroy(explosion, explosionDuration);
+        AudioSource.PlayClipAtPoint(deathAudio, Camera.main.transform.position, deathAudioVolume);
+        Time.timeScale = 0;
     }
 }
