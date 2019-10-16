@@ -99,6 +99,9 @@ MonoBehaviour:
   yPaddingBottom: 0.5
   health: 100
   MoveSpeed: 10
+  explosionParticles: {fileID: 7423827302354857369, guid: e242d9137c7654ec6bfea41e1c10c8af,
+    type: 3}
+  explosionDuration: 1
   missilePrefab: {fileID: 6644285880841414270, guid: 0a9a561e3e77e427b9cccdbf598f3d7d,
     type: 3}
   projectileSpeed: 10
@@ -107,6 +110,8 @@ MonoBehaviour:
   shootingAudioVolume: 0.7
   deathAudio: {fileID: 8300000, guid: c821e2a11b7df43ae9a743aeb0699052, type: 3}
   deathAudioVolume: 0.8
+  gameOver: {fileID: 8300000, guid: b1bfef60a55cd44fdb40c45bee8fa30e, type: 3}
+  gameOverVolume: 1
 --- !u!60 &5026281535877047510
 PolygonCollider2D:
   m_ObjectHideFlags: 0

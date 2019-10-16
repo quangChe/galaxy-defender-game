@@ -14,7 +14,9 @@ public class Player : MonoBehaviour
     [Header("Space Craft")]
     [SerializeField] float health = 100;
     [SerializeField] float MoveSpeed = 10f;
-    
+    [SerializeField] GameObject explosionParticles;
+    [SerializeField] float explosionDuration = 1f;
+
     [Header("Projectile")]
     [SerializeField] GameObject missilePrefab;
     [SerializeField] float projectileSpeed = 12f;
@@ -25,6 +27,8 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(0, 1)] float shootingAudioVolume = 0.2f;
     [SerializeField] AudioClip deathAudio;
     [SerializeField] [Range(0, 1)] float deathAudioVolume = 0.8f;
+    [SerializeField] AudioClip gameOver;
+    [SerializeField] [Range(0, 1)] float gameOverVolume = 1f;
 
     Coroutine firingCoroutine;
 
@@ -113,9 +117,10 @@ public class Player : MonoBehaviour
     private void Explode()
     {
         Destroy(gameObject);
-        //GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation) as GameObject;
-        //Destroy(explosion, explosionDuration);
+        GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation) as GameObject;
+        Destroy(explosion, explosionDuration);
         AudioSource.PlayClipAtPoint(deathAudio, Camera.main.transform.position, deathAudioVolume);
-        Time.timeScale = 0;
+        AudioSource.PlayClipAtPoint(gameOver, Camera.main.transform.position, gameOverVolume);
+        FindObjectOfType<Level>().LoadGameOver();
     }
 }
