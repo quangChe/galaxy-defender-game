@@ -114,6 +114,7 @@ MonoBehaviour:
   explosionDuration: 1
   explosionParticles: {fileID: 7423827302354857369, guid: e242d9137c7654ec6bfea41e1c10c8af,
     type: 3}
+  scoreValue: 150
   missilePrefab: {fileID: 3378498873425451819, guid: aa26337a4b6344fdabc343506d1c8183,
     type: 3}
   projectileSpeed: 8
