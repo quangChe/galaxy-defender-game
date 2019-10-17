@@ -1,22 +1,31 @@
 ﻿<Properties StartupConfiguration="{E8D687FC-6408-FAC7-D4E2-86CD5CA11A83}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MusicPlayer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScoreDisplay.cs">
     <Files>
       <File FileName="Assets/Scripts/Player.cs" Line="127" Column="1" />
-      <File FileName="Assets/Scripts/Enemy.cs" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="69" Column="25" />
       <File FileName="Assets/Scripts/Level.cs" Line="26" Column="43" />
-      <File FileName="Assets/Scripts/MusicPlayer.cs" Line="8" Column="15" />
+      <File FileName="Assets/Scripts/MusicPlayer.cs" Line="22" Column="10" />
+      <File FileName="Assets/Scripts/GameSession.cs" Line="28" Column="13" />
+      <File FileName="Assets/Scripts/ScoreDisplay.cs" Line="9" Column="12" />
+      <File FileName="Assets/Scripts/EnemyPath.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Galaxy Defender" expanded="True" selected="True" />
+          <Node name="Galaxy Defender" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="ScoreDisplay.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2c086c27-727c-43ea-a6d4-7fe09f3c3f7a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4fe2f37a-f45b-4774-a13f-076962f3bcbd" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Configs")]
+    [Header("Enemy Stats")]
     [SerializeField] float health = 100;
     [SerializeField] float shotCounter;
     [SerializeField] float explosionDuration = 1f;
     [SerializeField] GameObject explosionParticles;
+    [SerializeField] int scoreValue = 150;
 
     [Header("Projectile")]
     [SerializeField] GameObject missilePrefab;
@@ -73,6 +74,7 @@ public class Enemy : MonoBehaviour
 
     private void Explode()
     {
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         Destroy(gameObject);
         GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation) as GameObject;
         Destroy(explosion, explosionDuration);
